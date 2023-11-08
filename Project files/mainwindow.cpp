@@ -244,11 +244,11 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tableWidget->setItem(3, 3, new QTableWidgetItem(QString::number(mt4.time4)));
     ui->tableWidget->setItem(4, 3, new QTableWidgetItem(QString::number(mt5.time4)));
 
-    ui->tableWidget->setItem(0, 4, new QTableWidgetItem(QString::number(mt1.time4)));
-    ui->tableWidget->setItem(1, 4, new QTableWidgetItem(QString::number(mt2.time4)));
-    ui->tableWidget->setItem(2, 4, new QTableWidgetItem(QString::number(mt3.time4)));
-    ui->tableWidget->setItem(3, 4, new QTableWidgetItem(QString::number(mt4.time4)));
-    ui->tableWidget->setItem(4, 4, new QTableWidgetItem(QString::number(mt5.time4)));
+    ui->tableWidget->setItem(0, 4, new QTableWidgetItem(QString::number(mt1.time8)));
+    ui->tableWidget->setItem(1, 4, new QTableWidgetItem(QString::number(mt2.time8)));
+    ui->tableWidget->setItem(2, 4, new QTableWidgetItem(QString::number(mt3.time8)));
+    ui->tableWidget->setItem(3, 4, new QTableWidgetItem(QString::number(mt4.time8)));
+    ui->tableWidget->setItem(4, 4, new QTableWidgetItem(QString::number(mt5.time8)));
 
     ui->tableWidget->setItem(0, 5, new QTableWidgetItem(QString::number(p1.time)));
     ui->tableWidget->setItem(1, 5, new QTableWidgetItem(QString::number(p2.time)));
