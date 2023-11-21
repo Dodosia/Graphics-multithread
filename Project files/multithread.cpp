@@ -21,6 +21,7 @@ Multithread::Multithread(int a, int b) : n(a), m(b)
 void Multithread::calc()
 {
     long c, s;
+    s = 0;
     mutex mut;
 
     time2 = clock();
@@ -30,9 +31,8 @@ void Multithread::calc()
                    mut.lock();
 
                    c = 1.0;
-                   s = 0.0;
 
-                   for (int i = 0; i < n; i++)
+                   for (int i = 0; i < n/2; i++)
                    {
                        for (int j = 0; j < m; j++)
                        {
@@ -50,9 +50,8 @@ void Multithread::calc()
                    mut.lock();
 
                    c = 1.0;
-                   s = 0.0;
 
-                   for (int i = 0; i < n; i++)
+                   for (int i = n/2; i < n; i++)
                    {
                        for (int j = 0; j < m; j++)
                        {
@@ -76,6 +75,7 @@ void Multithread::calc()
 void Multithread::calc2()
 {
     long c, s;
+    s = 0;
     mutex mut;
 
     time4 = clock();
@@ -85,9 +85,8 @@ void Multithread::calc2()
                    mut.lock();
 
                    c = 1.0;
-                   s = 0.0;
 
-                   for (int i = 0; i < n; i++)
+                   for (int i = 0; i < n/4; i++)
                    {
                        for (int j = 0; j < m; j++)
                        {
@@ -99,15 +98,13 @@ void Multithread::calc2()
 
                    mut.unlock();
                });
-
     thread th2([&]()
                {
                    mut.lock();
 
                    c = 1.0;
-                   s = 0.0;
 
-                   for (int i = 0; i < n; i++)
+                   for (int i = n/4; i < n/2; i++)
                    {
                        for (int j = 0; j < m; j++)
                        {
@@ -123,9 +120,8 @@ void Multithread::calc2()
                    mut.lock();
 
                    c = 1.0;
-                   s = 0.0;
 
-                   for (int i = 0; i < n; i++)
+                   for (int i = n/2; i < 3*n/4; i++)
                    {
                        for (int j = 0; j < m; j++)
                        {
@@ -141,9 +137,8 @@ void Multithread::calc2()
                    mut.lock();
 
                    c = 1.0;
-                   s = 0.0;
 
-                   for (int i = 0; i < n; i++)
+                   for (int i = n/4; i < n; i++)
                    {
                        for (int j = 0; j < m; j++)
                        {
@@ -168,6 +163,7 @@ void Multithread::calc2()
 void Multithread::calc3()
 {
     long c, s;
+    s = 0;
     mutex mut;
 
     time8 = clock();
@@ -177,11 +173,10 @@ void Multithread::calc3()
                    mut.lock();
 
                    c = 1.0;
-                   s = 0.0;
 
-                   for (int i = 0; i < n; i++)
+                   for (int i = 0; i < n/8; i++)
                    {
-                       for (int j = 0; j < m; j++)
+                       for (int j = 0; j < m/8; j++)
                        {
                            c *= 1.0 / v[i][j];
                        }
@@ -197,9 +192,8 @@ void Multithread::calc3()
                    mut.lock();
 
                    c = 1.0;
-                   s = 0.0;
 
-                   for (int i = 0; i < n; i++)
+                   for (int i = n/8; i < n/4; i++)
                    {
                        for (int j = 0; j < m; j++)
                        {
@@ -215,9 +209,8 @@ void Multithread::calc3()
                    mut.lock();
 
                    c = 1.0;
-                   s = 0.0;
 
-                   for (int i = 0; i < n; i++)
+                   for (int i = n/4; i < 3*n/8; i++)
                    {
                        for (int j = 0; j < m; j++)
                        {
@@ -233,9 +226,8 @@ void Multithread::calc3()
                    mut.lock();
 
                    c = 1.0;
-                   s = 0.0;
 
-                   for (int i = 0; i < n; i++)
+                   for (int i = 3*n/8; i < n/2; i++)
                    {
                        for (int j = 0; j < m; j++)
                        {
@@ -251,9 +243,8 @@ void Multithread::calc3()
                    mut.lock();
 
                    c = 1.0;
-                   s = 0.0;
 
-                   for (int i = 0; i < n; i++)
+                   for (int i = n/2; i < 5*n/8; i++)
                    {
                        for (int j = 0; j < m; j++)
                        {
@@ -269,9 +260,8 @@ void Multithread::calc3()
                    mut.lock();
 
                    c = 1.0;
-                   s = 0.0;
 
-                   for (int i = 0; i < n; i++)
+                   for (int i = 5*n/8; i < 6*n/8; i++)
                    {
                        for (int j = 0; j < m; j++)
                        {
@@ -287,9 +277,8 @@ void Multithread::calc3()
                    mut.lock();
 
                    c = 1.0;
-                   s = 0.0;
 
-                   for (int i = 0; i < n; i++)
+                   for (int i = 6*n/8; i < 7*n/8; i++)
                    {
                        for (int j = 0; j < m; j++)
                        {
@@ -305,9 +294,8 @@ void Multithread::calc3()
                    mut.lock();
 
                    c = 1.0;
-                   s = 0.0;
 
-                   for (int i = 0; i < n; i++)
+                   for (int i = 7*n/8; i < n; i++)
                    {
                        for (int j = 0; j < m; j++)
                        {
